@@ -5,6 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noshahi Digital Solution</title>
+<link rel="icon" href="img/NDS-logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -123,30 +125,6 @@
   transform:rotate(10deg);
 }
 
-/* MOBILE RESPONSIVE */
-@media(max-width:768px){
-
-  .nav-menu{
-  position:fixed;
-  right:-100%;  /* hidden initially */
-  opacity:0;
-  transition: all 0.5s ease;
-}
-.nav-menu.show{
-  right:0;      /* slide in */
-  opacity:1;    /* visible */
-  z-index:1000; /* on top of everything */
-}
-
-  .menu-toggle{
-    display:flex;
-  }
-  .nav-menu a,
-  .nav-menu .login-btn,
-  .nav-menu .cta-btn{
-    font-size:1.2rem;
-  }
-}
 
 
 /* ========== HERO SECTION ========== */
@@ -441,6 +419,227 @@
   }
 }
 
+/* ===== HOW WE WORK ===== */
+.how-we-work{
+  padding:100px 0;
+  background:#fff;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-tag{
+  display:inline-block;
+  padding:6px 16px;
+  font-size:0.8rem;
+  border-radius:20px;
+  background:rgba(231,57,70,0.1);
+  color:#E63946;
+  margin-bottom:12px;
+}
+
+.section-head h2{
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  color:#111;
+}
+
+.section-head h2 span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.section-head p{
+  margin-top:10px;
+  color:#555;
+  font-size:1rem;
+}
+
+/* Steps */
+.process-steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+
+.step-card{
+  background:#fafafa;
+  padding:40px 25px;
+  border-radius:18px;
+  text-align:center;
+  transition:0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Glow effect */
+.step-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,
+    rgba(247,127,0,0.25),
+    transparent 70%);
+  opacity:0;
+  transition:0.4s;
+}
+
+.step-card:hover::before{
+  opacity:1;
+}
+
+.step-icon{
+  width:60px;
+  height:60px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#E63946,#F77F00);
+  color:#fff;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.step-card h3{
+  margin-bottom:10px;
+  font-size:1.15rem;
+  color:#111;
+}
+
+.step-card p{
+  font-size:0.95rem;
+  color:#555;
+  line-height:1.6;
+}
+
+.step-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .process-steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .process-steps{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== RESULTS SECTION ===== */
+.results{
+  position:relative;
+  padding:100px 0;
+  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:#fff;
+  overflow:hidden;
+}
+
+.results-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top right, rgba(247,127,0,0.25), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(231,57,70,0.25), transparent 50%);
+}
+
+.results .container{
+  position:relative;
+  z-index:2;
+}
+
+/* Heading */
+.results-head{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.results-tag{
+  display:inline-block;
+  padding:6px 18px;
+  font-size:0.8rem;
+  border-radius:20px;
+  background:rgba(247,127,0,0.15);
+  color:#F77F00;
+  margin-bottom:12px;
+}
+
+.results-head h2{
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  margin-bottom:10px;
+}
+
+.results-head h2 span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.results-head p{
+  color:#ccc;
+  font-size:0.95rem;
+}
+
+/* Grid */
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+
+/* Cards */
+.result-card{
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  padding:45px 20px;
+  text-align:center;
+  backdrop-filter:blur(6px);
+  transition:0.4s ease;
+}
+
+.result-card h3{
+  font-size:clamp(2rem,4vw,2.6rem);
+  font-weight:700;
+  margin-bottom:8px;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.result-card p{
+  font-size:0.95rem;
+  color:#ddd;
+  letter-spacing:0.5px;
+}
+
+.result-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .results-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .results{
+    padding:80px 0;
+  }
+  .results-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -578,6 +777,113 @@ function toggleMenu(){
 
 
 
+<section class="how-we-work">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-tag">Our Process</span>
+      <h2>How We <span>Work</span></h2>
+      <p>A simple, transparent process that delivers real results.</p>
+    </div>
+
+    <div class="process-steps">
+
+      <div class="step-card">
+        <div class="step-icon">01</div>
+        <h3>Discover</h3>
+        <p>We understand your brand, audience, and goals.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon">02</div>
+        <h3>Plan</h3>
+        <p>We build a clear content & promotion strategy.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon">03</div>
+        <h3>Create</h3>
+        <p>We design posts, videos & ad creatives.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon">04</div>
+        <h3>Grow</h3>
+        <p>We publish, promote & scale your brand.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="results">
+  <div class="results-overlay"></div>
+
+  <div class="container">
+    <div class="results-head">
+      <span class="results-tag">Our Results</span>
+      <h2>Numbers That <span>Build Trust</span></h2>
+      <p>Delivering consistent growth for brands across platforms.</p>
+    </div>
+
+    <div class="results-grid">
+
+      <div class="result-card">
+        <h3 class="counter" data-target="120">0</h3>
+        <p>Happy Clients</p>
+      </div>
+
+      <div class="result-card">
+        <h3 class="counter" data-target="450">0</h3>
+        <p>Projects Completed</p>
+      </div>
+
+      <div class="result-card">
+        <h3 class="counter" data-target="95">0</h3>
+        <p>Client Retention %</p>
+      </div>
+
+      <div class="result-card">
+        <h3 class="counter" data-target="8">0</h3>
+        <p>Years Experience</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+  
+  const runCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+  
+    const update = () => {
+      const inc = Math.ceil(target / speed);
+      count += inc;
+  
+      if(count < target){
+        counter.innerText = count;
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    update();
+  };
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        runCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.4});
+  
+  counters.forEach(counter => observer.observe(counter));
+  </script>
+  
 </body>
 </html>
->>>>>>> bfdbc7f (Initial website files)
+
