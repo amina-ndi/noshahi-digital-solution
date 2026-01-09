@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noshahi Digital Solution</title>
+<link rel="icon" href="img/NDS-logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#111;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* Logo */
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.4rem;
+  font-weight:600;
+}
+.nav-logo span{
+  color:#F77F00;
+}
+
+/* Menu */
+.nav-menu{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  transition:all 0.5s ease;
+}
+.nav-menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:0.95rem;
+  position:relative;
+  transition:0.3s;
+}
+.nav-menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transition:0.3s;
+}
+.nav-menu a:hover::after{
+  width:100%;
+}
+.nav-menu a:hover{
+  color:#F77F00;
+}
+/* Active link */
+.nav-menu a.active {
+  color: #ff8a00;       /* Highlight color */
+  font-weight: 700;
+  border-bottom: 3px solid #ff8a00; /* Optional underline */
+  border-radius: 3px 3px 0 0;       /* Rounded underline top corners */
+}
+/* Buttons */
+.nav-menu .login-btn,
+.nav-menu .cta-btn{
+  margin-left:10px;
+  border-radius:25px;
+  padding:6px 18px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.4s ease;
+}
+.login-btn{
+  background:transparent;
+  border:1px solid #F77F00;
+  color:#F77F00;
+}
+.login-btn:hover{
+  background:#F77F00;
+  color:#111;
+  box-shadow:0 0 15px rgba(247,127,0,0.6);
+}
+.cta-btn{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  border:none;
+  color:#fff;
+}
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(231,57,70,0.6);
+}
+
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+  transition:0.4s;
+}
+
+/* Hamburger hover animation */
+.menu-toggle:hover span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transform:rotate(10deg);
+}
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .navbar{
+    grid-template-columns:auto auto;
+  }
+  @media(max-width:900px){
+  .nav-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:25px 0;
+    display:none;
+  }
+
+  .nav-menu.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+}
+
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{
+    margin:auto;
+  }
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+/* ===== HERO SECTION ===== */
+.hero{
+    background:#F9F9F9;
+  padding:100px 40px 80px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Grid */
+.hero-container{
+    max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+/* Gradient Shape */
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-120px;
+  right:-120px;
+  width:380px;
+  height:380px;
+  background:linear-gradient(135deg,#E63946,#F77F00);
+  border-radius:50%;
+  opacity:0.15;
+}
+/* Left content */
+.hero h1{
+    font-size:3rem;
+  line-height:1.2;
+  color:#111;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin:20px 0;
+  font-size:1.05rem;
+  color:#444;
+  max-width:500px;
+}
+
+/* Buttons */
+.hero-buttons{
+  display:flex;
+  gap:20px;
+}
+
+.hero-buttons .primary{
+    background:linear-gradient(90deg,#E63946,#F77F00);
+  color:#fff;
+  border:none;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+.hero-buttons .primary:hover{
+    box-shadow:0 10px 30px rgba(231,57,70,0.4);
+    transform:translateY(-3px);
+}
+
+.hero-buttons .secondary{
+    background:transparent;
+  border:2px solid #111;
+  color:#111;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+.hero-buttons .secondary:hover{
+    background:#111;
+    color:#fff;
+}
+
+/* Image */
+.hero-img img{
+    width:100%;
+  max-width:480px;
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+/* ===== Mobile Responsive ===== */
+@media(max-width:900px){
+  .hero{
+    padding:60px 20px;
+  }
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-img{
+    margin-top:40px;
+  }
+}
+.who-we-are{
+  padding:100px 30px;
+  background:#fff;
+}
+
+.who-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+/* Reverse layout */
+.who-container{
+  direction: rtl;
+}
+
+.who-text,
+.who-visual{
+  direction: ltr;
+}
+
+/* Text */
+.who-text h2{
+  font-size:clamp(2rem,4vw,2.8rem);
+  margin-bottom:10px;
+}
+
+.who-text h2 span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.who-text .tagline{
+  font-weight:600;
+  color:#F77F00;
+  margin-bottom:20px;
+}
+
+.who-text p{
+  color:#555;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.who-points{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-bottom:35px;
+}
+
+.who-points div{
+  background:#f7f7f7;
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:0.9rem;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Button */
+.who-btn{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  color:#fff;
+  border:none;
+  padding:14px 32px;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
+}
+.who-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 30px rgba(231,57,70,0.5);
+}
+
+/* Right Visual */
+.who-visual{
+  position:relative;
+}
+
+.glow-card{
+  position:relative;
+  padding:8px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#E63946,#F77F00);
+  animation:glow 5s linear infinite;
+}
+
+.glow-card img{
+  width:100%;
+  border-radius:25px;
+  display:block;
+}
+
+@keyframes glow{
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .who-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .who-points{
+    justify-content:center;
+  }
+}
+.mission-vision{
+  padding:100px 30px;
+  background:#f7f7f7;
+}
+
+.mv-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* Box */
+.mv-box{
+  background:#fff;
+  padding:60px 40px;
+  border-radius:25px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
+  transition:0.4s ease;
+}
+
+.mv-box:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Gradient side bar */
+.mv-box::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(180deg,#E63946,#F77F00);
+}
+
+/* Icon */
+.mv-icon{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+/* Headings */
+.mv-box h3{
+  font-size:1.6rem;
+  margin-bottom:15px;
+}
+
+/* Text */
+.mv-box p{
+  color:#555;
+  line-height:1.7;
+  font-size:1rem;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .mv-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== SECTION ===== */
+.meet-team {
+  padding: 100px 20px;
+  background: #F9F9F9;
+  text-align: center;
+}
+
+.meet-team .section-title {
+  font-size: 48px;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.meet-team .section-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #111; /* fallback color */
+}
+
+.meet-team .section-title span {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.meet-team .section-subtitle {
+    font-weight:600;
+  color:#F77F00;
+  margin-bottom:20px;
+}
+
+/* ===== TEAM GRID ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  perspective: 1500px; /* for 3D flip */
+}
+
+/* ===== CARD ===== */
+.team-card {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+  opacity: 0; /* initial for staggered animation */
+  transform: translateY(50px);
+}
+
+.team-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:hover {
+  transform: rotateY(180deg);
+}
+
+/* ===== CARD FACES ===== */
+.team-card .front,
+.team-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+/* FRONT */
+.team-card .front {
+  background: #fff;
+}
+
+/* FRONT IMAGE */
+.team-card .front img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .front img {
+  transform: scale(1.1);
+}
+
+/* BACK */
+.team-card .back {
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  color: #fff;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* TEXT */
+.team-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* SOCIAL ICONS BACK */
+.team-card .back .socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.team-card .back .socials a {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.team-card .back .socials a:hover {
+  transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .meet-team .section-title { font-size: 36px; }
+  .meet-team .section-subtitle { font-size: 16px; }
+  .team-card { height: 300px; }
+  .team-card .front img { width: 100px; height: 100px; }
+}
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <img style="width: 50px;" src="img/NDS-logo.png" alt="Noshahi Digital">
+      Noshahi <span>Digital</span>
+    </div>
+  
+    <!-- Menu Links -->
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html" >Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+      <button class="login-btn">Login</button>
+      <button class="cta-btn">Get Quote</button>
+    </div>
+  
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+    
+      const toggleBtn = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+    
+      toggleBtn.addEventListener("click", function(){
+        navMenu.classList.toggle("show");
+        toggleBtn.classList.toggle("active");
+      });
+    
+    });
+    </script>
+
+    <!-- ABOUT HERO -->
+<section class="hero">
+    <div class="hero-container">
+  
+      <!-- Left Content -->
+      <div>
+        <h1>
+          We Are <br>
+          <span>Noshahi Digital Solution</span>
+        </h1>
+  
+        <p>
+          A creative and performance-driven digital agency helping brands grow through
+          smart strategy, powerful content and high-converting social media campaigns.
+        </p>
+  
+        <div class="hero-buttons">
+          <button class="primary">Get Free Consultation</button>
+          <button class="secondary">Meet Our Team</button>
+        </div>
+      </div>
+  
+      <!-- Right Image -->
+      <div class="hero-img">
+        <img style="border-radius: 40px;" src="img/team.jpg" alt="Our Team at Work">
+      </div>
+  
+    </div>
+  </section>
+  <section class="who-we-are">
+    <div class="who-container">
+  
+      <!-- Left -->
+      <div class="who-text">
+        <h2>Who <span>We Are</span></h2>
+        <p class="tagline">We are not just designers — we are brand builders.</p>
+  
+        <p>
+          Noshahi Digital Solution is a modern digital agency that helps businesses grow
+          through creative content, powerful social media management and high-converting
+          marketing strategies. We turn ideas into brands and brands into results.
+        </p>
+  
+        <div class="who-points">
+          <div>✔ Creative Thinking</div>
+          <div>✔ Strategy + Design</div>
+          <div>✔ Growth Focused</div>
+        </div>
+  
+        <button class="who-btn">Discover Our Story</button>
+      </div>
+  
+      <!-- Right -->
+      <div class="who-visual">
+        <div class="glow-card">
+          <img src="img/NDS Post_022.png" alt="Our Team">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <section class="mission-vision">
+    <div class="mv-container">
+  
+      <!-- Mission -->
+      <div class="mv-box mission">
+        <div class="mv-icon">🚀</div>
+        <h3>Our Mission</h3>
+        <p>
+          To empower brands by creating powerful digital experiences that help
+          businesses grow, connect and succeed in the online world.
+        </p>
+      </div>
+  
+      <!-- Vision -->
+      <div class="mv-box vision">
+        <div class="mv-icon">👁️</div>
+        <h3>Our Vision</h3>
+        <p>
+          To become a leading digital agency known for creativity, innovation and
+          delivering real business results for our clients.
+        </p>
+      </div>
+  
+    </div>
+  </section>
+  <section class="meet-team">
+    <h2 class="section-title">Meet<span> Our Team</span></h2>
+    <p class="section-subtitle">Our experts driving innovation and excellence</p>
+  
+    <div class="team-grid">
+      <!-- Card 1 -->
+      <div class="team-card" data-delay="0">
+        <div class="front">
+          <img src="img/sir adeel.jpeg" alt="Alice Johnson">
+          <h3>Addel Noshahi</h3>
+          <p> Project Manager (PM) </p>
+        </div>
+        <div class="back">
+          <h3>Adeel Noshahi</h3>
+          <p>Central authority & decision maker</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="team-card" data-delay="100">
+        <div class="front">
+          <img src="img/girl.avif" alt="Bob Smith">
+          <h3>Maira Noshahi</h3>
+          <p>Assistant Project Manager (APM)</p>
+        </div>
+        <div class="back">
+          <h3>Maira Noshahi</h3>
+          <p>Execution & coordination manager</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="team-card" data-delay="200">
+        <div class="front">
+          <img src="img/nabeel bhi.jpg" alt="Clara Lee">
+          <h3>Nabeel Nosahhi</h3>
+          <p>Business Development (BD)</p>
+        </div>
+        <div class="back">
+          <h3>Nabeel Noshahi</h3>
+          <p>Lead generation & client acquisition</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="team-card" data-delay="300">
+        <div class="front">
+          <img src="img/girl.avif" alt="David Kim">
+          <h3> Fiza Shafique</h3>
+          <p>Graphic Designer</p>
+        </div>
+        <div class="back">
+          <h3> Fiza Shafique</h3>
+          <p>Visual content creator</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 5 -->
+      <div class="team-card" data-delay="400">
+        <div class="front">
+          <img src="img/girl.avif" alt="Emily Davis">
+          <h3> Minahil Rashid</h3>
+          <p> Video Developer</p>
+        </div>
+        <div class="back">
+          <h3> Minahil Rashid</h3>
+          <p>Video & reel production</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 6 -->
+      <div class="team-card" data-delay="500">
+        <div class="front">
+          <img src="img/girl.avif" alt="Frank Miller">
+          <h3>Maha</h3>
+          <p>Uploading & Scheduling</p>
+        </div>
+        <div class="back">
+          <h3>Maha</h3>
+          <p>Content publishing & engagement</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 7 -->
+      <div class="team-card" data-delay="600">
+        <div class="front">
+          <img src="img/girl.avif" alt="Grace Chen">
+          <h3>Maira Sarwar</h3>
+          <p>Uploading & Scheduling</p>
+        </div>
+        <div class="back">
+          <h3>Maira Sarwar</h3>
+          <p>Content publishing & engagement</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 8 -->
+      <div class="team-card" data-delay="700">
+        <div class="front">
+          <img src="img/girl.avif" alt="Henry Wilson">
+          <h3>Amna shafqat</h3>
+          <p>Support Lead</p>
+        </div>
+        <div class="back">
+          <h3>Amna shafqat</h3>
+          <p>Providing excellent client support & guidance.</p>
+          <div class="socials">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+            <a href="https://github.com" target="_blank" title="GitHub">💼</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <script>
+  /* ===== STAGGERED SCROLL ANIMATION ===== */
+  const teamCards = document.querySelectorAll('.team-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, parseInt(entry.target.dataset.delay));
+      }
+    });
+  },{ threshold: 0.3 });
+  
+  teamCards.forEach(card => observer.observe(card));
+  </script>
+  
+</body>
+</html>
