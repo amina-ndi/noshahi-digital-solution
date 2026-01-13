@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noshahi Digital Solution</title>
+<link rel="icon" href="img/NDS-logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#111;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* Logo */
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.4rem;
+  font-weight:600;
+}
+.nav-logo span{
+  color:#F77F00;
+}
+
+/* Menu */
+.nav-menu{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  transition:all 0.5s ease;
+}
+.nav-menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:0.95rem;
+  position:relative;
+  transition:0.3s;
+}
+.nav-menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transition:0.3s;
+}
+.nav-menu a:hover::after{
+  width:100%;
+}
+.nav-menu a:hover{
+  color:#F77F00;
+}
+/* Active link */
+.nav-menu a.active {
+  color: #ff8a00;       /* Highlight color */
+  font-weight: 700;
+  border-bottom: 3px solid #ff8a00; /* Optional underline */
+  border-radius: 3px 3px 0 0;       /* Rounded underline top corners */
+}
+/* Buttons */
+.nav-menu .login-btn,
+.nav-menu .cta-btn{
+  margin-left:10px;
+  border-radius:25px;
+  padding:6px 18px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.4s ease;
+}
+.login-btn{
+  background:transparent;
+  border:1px solid #F77F00;
+  color:#F77F00;
+}
+.login-btn:hover{
+  background:#F77F00;
+  color:#111;
+  box-shadow:0 0 15px rgba(247,127,0,0.6);
+}
+.cta-btn{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  border:none;
+  color:#fff;
+}
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(231,57,70,0.6);
+}
+
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+  transition:0.4s;
+}
+
+/* Hamburger hover animation */
+.menu-toggle:hover span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transform:rotate(10deg);
+}
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .navbar{
+    grid-template-columns:auto auto;
+  }
+  @media(max-width:900px){
+  .nav-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:25px 0;
+    display:none;
+  }
+
+  .nav-menu.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+}
+
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{
+    margin:auto;
+  }
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+.portfolio-hero{
+    background:#F9F9F9;
+  padding:100px 40px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.portfolio-hero::before{
+    content:'';
+  position:absolute;
+  top:-120px;
+  right:-120px;
+  width:380px;
+  height:380px;
+  background:linear-gradient(135deg,#E63946,#F77F00);
+  border-radius:50%;
+  opacity:0.15;
+}
+.portfolio-hero-container{
+    max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+/* LEFT TEXT */
+.portfolio-badge{
+  display:inline-block;
+  background:linear-gradient(45deg,#ff3c00,#ff9900);
+  color:#fff;
+  padding:8px 22px;
+  border-radius:30px;
+  font-size:14px;
+  margin-bottom:25px;
+}
+
+.portfolio-text h1{
+    font-size:3rem;
+  line-height:1.2;
+  color:#111;
+}
+
+.portfolio-text h1 span{
+    background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;}
+
+.portfolio-text p{
+    margin:20px 0;
+  font-size:1.05rem;
+  color:#444;
+  max-width:500px;
+}
+
+/* BUTTONS */
+.portfolio-buttons{
+  display:flex;
+  gap:20px;
+}
+
+.btn{
+  padding:14px 32px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.btn.primary{
+    background:linear-gradient(90deg,#E63946,#F77F00);
+  color:#fff;
+  border:none;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+.btn.primary:hover{
+    box-shadow:0 10px 30px rgba(231,57,70,0.4);
+    transform:translateY(-3px);}
+
+.btn.outline{
+    background:transparent;
+  border:2px solid #111;
+  color:#111;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+.btn.outline:hover{
+    background:#111;
+    color:#fff;
+}
+
+/* RIGHT VISUAL */
+
+
+.visual-card img{
+    width:100%;
+  max-width:480px;
+  animation:float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .portfolio-hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .portfolio-text h1{
+    font-size:36px;
+  }
+
+  .portfolio-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+.portfolio-filter{
+  background:#ffffff;
+  padding:80px 8%;
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+}
+
+.filter-container h2{
+  font-size:42px;
+  color:#111;
+}
+
+.filter-container h2 span{
+  color:#ff3c00;
+}
+
+.filter-container p{
+  margin:15px 0 40px;
+  color:#444;
+  font-size:17px;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  background:#f2f2f2;
+  border:none;
+  padding:12px 28px;
+  border-radius:30px;
+  font-size:15px;
+  cursor:pointer;
+  color:#111;
+  transition:0.3s;
+  border:2px solid transparent;
+}
+
+.filter-btn:hover{
+  background:#111;
+  color:#fff;
+}
+
+.filter-btn.active{
+  background:linear-gradient(45deg,#ff3c00,#ff9900);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(255,60,0,0.4);
+}
+.portfolio-grid{
+  background:#ffffff;
+  padding:80px 8%;
+}
+
+.portfolio-items{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.portfolio-card{
+    
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  cursor:pointer;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.portfolio-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.portfolio-card:hover img{
+  transform:scale(1.1);
+}
+
+.portfolio-info{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:25px;
+  opacity:0;
+  transition:0.4s;
+}
+
+.portfolio-card:hover .portfolio-info{
+  opacity:1;
+}
+
+.portfolio-info h4{
+  font-size:20px;
+}
+
+.portfolio-info p{
+  font-size:14px;
+  color:#ff9900;
+}
+
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <img style="width: 50px;" src="img/NDS-logo.png" alt="Noshahi Digital">
+      Noshahi <span>Digital</span>
+    </div>
+  
+    <!-- Menu Links -->
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html" >Home</a>
+      <a href="about.html" >About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="#">Contact</a>
+      <button class="login-btn">Login</button>
+      <button class="cta-btn">Get Quote</button>
+    </div>
+  
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+    
+      const toggleBtn = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+    
+      toggleBtn.addEventListener("click", function(){
+        navMenu.classList.toggle("show");
+        toggleBtn.classList.toggle("active");
+      });
+    
+    });
+    </script>
+<section class="portfolio-hero">
+    <div class="portfolio-hero-container">
+  
+      <!-- LEFT CONTENT -->
+      <div class="portfolio-text">
+        <h1>Our Work That Builds <span>Powerful Brands</span></h1>
+        <p>Real projects. Real results. Real growth.</p>
+  
+        <div class="portfolio-buttons">
+          <a href="#" class="btn primary">View Our Work</a>
+          <a href="#" class="btn outline">Start Your Project</a>
+        </div>
+      </div>
+  
+      <!-- RIGHT VISUAL -->
+      <div class="portfolio-visual">
+        <div class="visual-card">
+          <img  style="border-radius: 30px;" src="img/digital-markiting.png" alt="Portfolio Preview">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <section class="portfolio-filter">
+    <div class="filter-container">
+  
+      <h2>Explore Our <span>Creative Work</span></h2>
+      <p>Select a category to see how we help brands grow online.</p>
+  
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="video">Video Ads</button>
+        <button class="filter-btn" data-filter="poster">Posters & Flex</button>
+        <button class="filter-btn" data-filter="brand">Brand Campaigns</button>
+        <button class="filter-btn" data-filter="youtube">YouTube</button>
+      </div>
+  
+    </div>
+  </section>
+  <script>
+    const buttons = document.querySelectorAll(".filter-btn");
+  
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+  </script>
+<section class="portfolio-grid">
+
+    <div class="portfolio-items">
+  
+      <!-- Social Media -->
+      <div class="portfolio-card social">
+        <img src="img/markiting.png">
+        <div class="portfolio-info">
+          <h4>Noshahi Digital Solution</h4>
+          <p>Social Media Management</p>
+        </div>
+      </div>
+  
+      <div class="portfolio-card social">
+        <img src="img/markiting2.png">
+        <div class="portfolio-info">
+          <h4>Fashion Brand Posts</h4>
+          <p>Social Media Design</p>
+        </div>
+      </div>
+  
+      <!-- Video Ads -->
+      <div class="portfolio-card video">
+        <img src="img/markiting.png">
+        <div class="portfolio-info">
+          <h4>Product Video Ad</h4>
+          <p>Video Ads Creation</p>
+        </div>
+      </div>
+  
+      <div class="portfolio-card video">
+        <img src="img/NDS_019.png">
+        <div class="portfolio-info">
+          <h4>Real Estate Reel</h4>
+          <p>Instagram Video Ad</p>
+        </div>
+      </div>
+  
+      <!-- Posters & Flex -->
+      <div class="portfolio-card poster">
+        <img src="img/creative.jpeg">
+        <div class="portfolio-info">
+          <h4>Business Flex</h4>
+          <p>Poster & Banner Design</p>
+        </div>
+      </div>
+  
+      <div class="portfolio-card poster">
+        <img src="img/graphic-design.jpg.jpeg">
+        <div class="portfolio-info">
+          <h4>Event Poster</h4>
+          <p>Promotional Design</p>
+        </div>
+      </div>
+  
+      <!-- Brand Campaigns -->
+      <div class="portfolio-card brand">
+        <img src="img/NDS Post_022.png">
+        <div class="portfolio-info">
+          <h4>Brand Launch</h4>
+          <p>Marketing Campaign</p>
+        </div>
+      </div>
+  
+      <!-- YouTube -->
+      <div class="portfolio-card youtube">
+        <img src="img/NDS Post_030.png">
+        <div class="portfolio-info">
+          <h4>YouTube Thumbnail</h4>
+          <p>Channel Branding</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <script>
+const filterBtns = document.querySelectorAll(".filter-btn");
+const items = document.querySelectorAll(".portfolio-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.getAttribute("data-filter");
+
+    items.forEach(item => {
+      if(filter === "all" || item.classList.contains(filter)){
+        item.style.display = "block";  // Card dikhega
+      } else {
+        item.style.display = "none";   // Card hide
+      }
+    });
+  });
+});
+
+    </script>
+     
+</body>
+</html>
