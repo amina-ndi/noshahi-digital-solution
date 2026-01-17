@@ -130,6 +130,9 @@
   background:linear-gradient(90deg,#E63946,#F77F00);
   transform:rotate(10deg);
 }
+
+
+
 /* ========== RESPONSIVE ========== */
 @media(max-width:900px){
   .navbar{
@@ -326,94 +329,447 @@
   font-size:17px;
 }
 
-/* FILTER BUTTONS */
-.filter-buttons{
+
+.portfolio-filter-section{
+  background:#fff;
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.portfolio-section{
+  padding:80px 20px;
+  background:#ebe9e9;
+  text-align:center;
+}
+
+/* Buttons */
+.portfolio-filters{
   display:flex;
   justify-content:center;
   gap:15px;
   flex-wrap:wrap;
+  margin-bottom:40px;
 }
 
 .filter-btn{
-  background:#f2f2f2;
+  padding:10px 24px;
   border:none;
-  padding:12px 28px;
   border-radius:30px;
-  font-size:15px;
+  background:#eee;
   cursor:pointer;
-  color:#111;
-  transition:0.3s;
-  border:2px solid transparent;
-}
-
-.filter-btn:hover{
-  background:#111;
-  color:#fff;
+  font-weight:500;
 }
 
 .filter-btn.active{
-  background:linear-gradient(45deg,#ff3c00,#ff9900);
+  background:linear-gradient(45deg,#ff512f,#f09819);
   color:#fff;
-  box-shadow:0 10px 25px rgba(255,60,0,0.4);
-}
-.portfolio-grid{
-  background:#ffffff;
-  padding:80px 8%;
 }
 
-.portfolio-items{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+/* Wrapper */
+.portfolio-wrapper{
+  display:flex;
+  justify-content:center;   /* 🔥 CENTER MAIN POINT */
+  gap:25px;
+  flex-wrap:wrap;
+  max-width:1200px;
+  margin:auto;
 }
 
+/* Cards */
 .portfolio-card{
-    
-  position:relative;
+  width:320px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
   overflow:hidden;
-  border-radius:18px;
-  cursor:pointer;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
-  transition:0.4s;
+  display:none; /* JS will control */
 }
+
+
 
 .portfolio-card img{
   width:100%;
-  height:100%;
+  height:250px;
   object-fit:cover;
-  transition:0.5s;
+  transition:transform 0.4s;
 }
 
 .portfolio-card:hover img{
   transform:scale(1.1);
 }
 
-.portfolio-info{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:25px;
-  opacity:0;
-  transition:0.4s;
+.portfolio-card h4{
+  padding:15px;
+  font-size:16px;
 }
 
-.portfolio-card:hover .portfolio-info{
+/* Responsive */
+@media(max-width:768px){
+  .portfolio-card{ width:280px; }
+}
+@media(max-width:480px){
+  .portfolio-card{ width:100%; }
+}
+.trust-section{
+  position:relative;
+  padding:100px 20px;
+  background:url("images/trust-bg.jpg") center/cover no-repeat;
+  color:#fff;
+}
+
+.trust-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.trust-container{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+/* Title */
+.trust-title{
+  font-size:38px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.trust-title span{
+  background:linear-gradient(45deg,#ff512f,#f09819);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Subtitle */
+.trust-subtitle{
+  max-width:700px;
+  margin:0 auto 60px;
+  font-size:17px;
+  color:#ddd;
+}
+
+/* Stats */
+.trust-stats{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.trust-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border-radius:16px;
+  padding:30px 40px;
+  min-width:220px;
+  transition:0.3s;
+}
+
+.trust-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.12);
+}
+
+.trust-card h3{
+  font-size:40px;
+  font-weight:700;
+  background:linear-gradient(45deg,#ff512f,#f09819);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.trust-card p{
+  margin-top:10px;
+  font-size:15px;
+  color:#eee;
+}
+
+/* Badges */
+.trust-badges{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.trust-badges span{
+  border:1px solid rgba(255,255,255,0.3);
+  padding:10px 20px;
+  border-radius:30px;
+  font-size:14px;
+  color:#fff;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .trust-title{ font-size:30px; }
+  .trust-card{ width:100%; max-width:320px; }
+}
+.combo-section{
+  position:relative;
+  padding:100px 20px;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* Video */
+.bg-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* Overlay */
+.combo-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
+}
+
+.combo-container{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+/* Client Logos */
+.client-logos{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-bottom:60px;
+}
+
+.client-logos img{
+  height:50px;
+  filter:grayscale(100%);
+  opacity:0.8;
+  transition:0.3s;
+}
+
+.client-logos img:hover{
+  filter:grayscale(0);
   opacity:1;
 }
 
-.portfolio-info h4{
+/* Testimonial */
+.testimonial-box{
+  max-width:700px;
+  margin:0 auto 70px;
+  font-size:18px;
+}
+
+.testimonial-box p{
+  font-style:italic;
+  margin-bottom:20px;
+}
+
+.testimonial-box h4{
   font-size:20px;
+  margin-bottom:5px;
 }
 
-.portfolio-info p{
+.testimonial-box span{
   font-size:14px;
-  color:#ff9900;
+  color:#ccc;
 }
 
+/* CTA */
+.cta-box h2{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.cta-box span{
+  background:linear-gradient(45deg,#ff512f,#f09819);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.cta-box p{
+  margin-bottom:30px;
+  color:#ddd;
+}
+
+.cta-btn{
+  display:inline-block;
+  padding:14px 35px;
+  border-radius:40px;
+  background:linear-gradient(45deg,#ff512f,#f09819);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.cta-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .cta-box h2{ font-size:28px; }
+  .testimonial-box{ font-size:16px; }
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:#111;
+  color:#ccc;
+  padding:80px 0 0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+}
+.site-footer .container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* Brand */
+.footer-brand p{
+  margin-top:15px;
+  font-size:0.95rem;
+  line-height:1.6;
+}
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-logo img{
+  height:38px;
+}
+
+.footer-logo h3{
+  font-size:1.4rem;
+  color:#fff;
+}
+
+.footer-logo span{
+  color:#F77F00;
+}
+
+/* Columns */
+.footer-col h4{
+  font-size:1.1rem;
+  margin-bottom:20px;
+  color:#fff;
+  position:relative;
+}
+
+.footer-col h4::after{
+  content:'';
+  width:35px;
+  height:3px;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  position:absolute;
+  left:0;
+  bottom:-8px;
+}
+
+.footer-col ul{
+  list-style:none;
+  margin-top:25px;
+}
+
+.footer-col ul li{
+  margin-bottom:12px;
+  font-size:0.95rem;
+}
+
+.footer-col ul li a{
+  color:#ccc;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+  color:#F77F00;
+  padding-left:6px;
+}
+
+.contact-list li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Bottom Bar */
+.footer-bottom{
+  margin-top:60px;
+  padding:20px;
+  text-align:center;
+  background:#0b0b0b;
+  font-size:0.9rem;
+  color:#888;
+}
+.contact-list a{
+  color:#ccc;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.contact-list a:hover{
+  color:#F77F00;
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .site-footer{
+    padding:60px 0 0;
+  }
+  .footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .footer-logo{
+    justify-content:center;
+  }
+  .footer-col h4::after{
+    left:50%;
+    transform:translateX(-50%);
+  }
+}
+/* Footer contact responsive center */
+@media (max-width: 480px){
+  .footer-col{
+    text-align:center;
+  }
+
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .contact-list li{
+    justify-content:center;
+  }
+}
 </style>
 </head>
 
@@ -423,7 +779,7 @@
     <!-- Logo -->
     <div class="nav-logo">
       <img style="width: 50px;" src="img/NDS-logo.png" alt="Noshahi Digital">
-      Noshahi <span>Digital</span>
+      Noshahi <span>Digital Solutions</span>
     </div>
   
     <!-- Menu Links -->
@@ -432,7 +788,7 @@
       <a href="about.html" >About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html" class="active">Portfolio</a>
-      <a href="#">Contact</a>
+      <a href="contact-us.html">Contact</a>
       <button class="login-btn">Login</button>
       <button class="cta-btn">Get Quote</button>
     </div>
@@ -467,7 +823,6 @@
   
         <div class="portfolio-buttons">
           <a href="#" class="btn primary">View Our Work</a>
-          <a href="#" class="btn outline">Start Your Project</a>
         </div>
       </div>
   
@@ -480,127 +835,300 @@
   
     </div>
   </section>
-  <section class="portfolio-filter">
-    <div class="filter-container">
+
+  <section class="portfolio-section">
+
+    <!-- Filters -->
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="video">Video Ads</button>
+      <button class="filter-btn" data-filter="brand">Brand Campaigns</button>
+    </div>
   
-      <h2>Explore Our <span>Creative Work</span></h2>
-      <p>Select a category to see how we help brands grow online.</p>
-  
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="social">Social Media</button>
-        <button class="filter-btn" data-filter="video">Video Ads</button>
-        <button class="filter-btn" data-filter="poster">Posters & Flex</button>
-        <button class="filter-btn" data-filter="brand">Brand Campaigns</button>
-        <button class="filter-btn" data-filter="youtube">YouTube</button>
+    <!-- Cards Wrapper -->
+    <div class="portfolio-wrapper">
+      <div class="portfolio-card" data-category="social">
+        <img src="img/graphic-design.jpg.jpeg">
+        <h4>Royal Burger</h4>
       </div>
   
-    </div>
-  </section>
-  <script>
-    const buttons = document.querySelectorAll(".filter-btn");
+      <div class="portfolio-card" data-category="social">
+        <img style="width: 250px;" src="img/creative.jpeg">
+        <h4>Pizza Hub</h4>
+      </div>
   
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
+      <div class="portfolio-card" data-category="video">
+        <img src="img/digital-markiting.png">
+        <h4>Elite Gym</h4>
+      </div>
+  
+      <div class="portfolio-card" data-category="brand">
+        <img src="img/NDS Post_030.png">
+        <h4>Smart School</h4>
+      </div>
+      
+      <div class="portfolio-card" data-category="brand">
+        <img src="img/markiting-agency.png">
+        <h4>Smart School</h4>
+      </div>
+  
+      <div class="portfolio-card" data-category="video">
+        <img src="img/markiting.png">
+        <h4>Real Estate Pro</h4>
+      </div>
+      
+    </div>
+  
+  </section>
+  
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.portfolio-card');
+    const CARDS_LIMIT = 6;
+    
+    function showCards(filter){
+      let visibleCount = 0;
+    
+      cards.forEach(card=>{
+        card.style.display = "none";
+    
+        if(filter === "all" || card.dataset.category === filter){
+          if(visibleCount < CARDS_LIMIT){
+            card.style.display = "block";
+            visibleCount++;
+          }
+        }
+      });
+    }
+    
+    /* Initial load */
+    showCards("all");
+    
+    buttons.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        buttons.forEach(b=>b.classList.remove("active"));
         btn.classList.add("active");
+    
+        showCards(btn.dataset.filter);
       });
     });
-  </script>
-<section class="portfolio-grid">
-
-    <div class="portfolio-items">
-  
-      <!-- Social Media -->
-      <div class="portfolio-card social">
-        <img src="img/markiting.png">
-        <div class="portfolio-info">
-          <h4>Noshahi Digital Solution</h4>
-          <p>Social Media Management</p>
-        </div>
-      </div>
-  
-      <div class="portfolio-card social">
-        <img src="img/markiting2.png">
-        <div class="portfolio-info">
-          <h4>Fashion Brand Posts</h4>
-          <p>Social Media Design</p>
-        </div>
-      </div>
-  
-      <!-- Video Ads -->
-      <div class="portfolio-card video">
-        <img src="img/markiting.png">
-        <div class="portfolio-info">
-          <h4>Product Video Ad</h4>
-          <p>Video Ads Creation</p>
-        </div>
-      </div>
-  
-      <div class="portfolio-card video">
-        <img src="img/NDS_019.png">
-        <div class="portfolio-info">
-          <h4>Real Estate Reel</h4>
-          <p>Instagram Video Ad</p>
-        </div>
-      </div>
-  
-      <!-- Posters & Flex -->
-      <div class="portfolio-card poster">
-        <img src="img/creative.jpeg">
-        <div class="portfolio-info">
-          <h4>Business Flex</h4>
-          <p>Poster & Banner Design</p>
-        </div>
-      </div>
-  
-      <div class="portfolio-card poster">
-        <img src="img/graphic-design.jpg.jpeg">
-        <div class="portfolio-info">
-          <h4>Event Poster</h4>
-          <p>Promotional Design</p>
-        </div>
-      </div>
-  
-      <!-- Brand Campaigns -->
-      <div class="portfolio-card brand">
-        <img src="img/NDS Post_022.png">
-        <div class="portfolio-info">
-          <h4>Brand Launch</h4>
-          <p>Marketing Campaign</p>
-        </div>
-      </div>
-  
-      <!-- YouTube -->
-      <div class="portfolio-card youtube">
-        <img src="img/NDS Post_030.png">
-        <div class="portfolio-info">
-          <h4>YouTube Thumbnail</h4>
-          <p>Channel Branding</p>
-        </div>
-      </div>
-  
-    </div>
-  </section>
-  <script>
-const filterBtns = document.querySelectorAll(".filter-btn");
-const items = document.querySelectorAll(".portfolio-card");
-
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filter = btn.getAttribute("data-filter");
-
-    items.forEach(item => {
-      if(filter === "all" || item.classList.contains(filter)){
-        item.style.display = "block";  // Card dikhega
-      } else {
-        item.style.display = "none";   // Card hide
-      }
-    });
-  });
-});
-
     </script>
-     
+    <section class="trust-section">
+      <div class="trust-overlay"></div>
+    
+      <div class="trust-container">
+        
+        <h2 class="trust-title">
+          Why Brands Trust <span>Noshahi Digital Solution</span>
+        </h2>
+    
+        <p class="trust-subtitle">
+          We don’t just manage social media — we grow brands with proven strategies.
+        </p>
+    
+        <!-- Stats -->
+        <div class="trust-stats">
+    
+          <div class="trust-card">
+            <h3 class="counter" data-target="250">0</h3>
+            <p>Projects Completed</p>
+          </div>
+    
+          <div class="trust-card">
+            <h3 class="counter" data-target="120">0</h3>
+            <p>Happy Clients</p>
+          </div>
+    
+          <div class="trust-card">
+            <h3 class="counter" data-target="340">0</h3>
+            <p>% Average ROI</p>
+          </div>
+    
+        </div>
+    
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <span>Meta Ads Partner</span>
+          <span>Google Certified</span>
+          <span>Creative Agency</span>
+        </div>
+    
+      </div>
+    </section>
+    <script>
+      const counters = document.querySelectorAll('.counter');
+      
+      const startCounter = () => {
+        counters.forEach(counter => {
+          const target = +counter.dataset.target;
+          let count = 0;
+      
+          const update = () => {
+            const increment = target / 80;
+            if(count < target){
+              count += increment;
+              counter.innerText = Math.ceil(count);
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          update();
+        });
+      };
+      
+      window.addEventListener('scroll',()=>{
+        const section = document.querySelector('.trust-section');
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < window.innerHeight - 200){
+          startCounter();
+        }
+      });
+      </script>
+      <section class="combo-section">
+
+        <!-- Background Video -->
+        <video autoplay muted loop class="bg-video">
+          <source src="video/video.mp4" type="video/mp4">
+        </video>
+      
+        <div class="combo-overlay"></div>
+      
+        <div class="combo-container">
+      
+          <!-- Client Logos -->
+          <div class="client-logos">
+            <img src="logos/logo1.png">
+            <img src="logos/logo2.png">
+            <img src="logos/logo3.png">
+            <img src="logos/logo4.png">
+          </div>
+      
+          <!-- Testimonials -->
+          <div class="testimonial-box">
+            <p class="testimonial-text">
+              “Noshahi Digital Solution transformed our social media presence.
+              Sales increased dramatically within 30 days.”
+            </p>
+            <h4>Royal Burger</h4>
+            <span>Restaurant Brand</span>
+          </div>
+      
+          <!-- CTA -->
+          <div class="cta-box">
+            <h2>
+              Ready to Grow Your Brand with
+              <span>Noshahi Digital Solution</span>?
+            </h2>
+            <p>Let’s build your digital presence and scale your business.</p>
+            <a href="contact.html" class="cta-btn">Get Free Consultation</a>
+          </div>
+      
+        </div>
+      </section>
+      <script>
+        const testimonials = [
+          {
+            text:"Noshahi Digital Solution boosted our sales within weeks.",
+            name:"Royal Burger",
+            role:"Restaurant Brand"
+          },
+          {
+            text:"Highly professional team with amazing creative work.",
+            name:"Elite Gym",
+            role:"Fitness Industry"
+          }
+        ];
+        
+        let index = 0;
+        const text = document.querySelector('.testimonial-text');
+        const name = document.querySelector('.testimonial-box h4');
+        const role = document.querySelector('.testimonial-box span');
+        
+        setInterval(()=>{
+          index = (index + 1) % testimonials.length;
+          text.innerText = testimonials[index].text;
+          name.innerText = testimonials[index].name;
+          role.innerText = testimonials[index].role;
+        },4000);
+        </script>
+          <footer class="site-footer">
+            <div class="container footer-grid">
+          
+              <!-- Brand -->
+              <div class="footer-brand">
+                <div class="footer-logo">
+                  <img src="img/NDS-logo.png" alt="Noshahi Digital">
+                  <h3>Noshahi <span>Digital Solutions</span></h3>
+                </div>
+                <p>
+                  We help brands grow through smart social media management,
+                  creative content and result-driven digital strategies.
+                </p>
+              </div>
+          
+              <!-- Quick Links -->
+              <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+          
+              <!-- Services -->
+              <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                  <li><a href="#">Social Media Management</a></li>
+                  <li><a href="#">Creative Posts & Flex</a></li>
+                  <li><a href="#">Video Ads & Promotion</a></li>
+                  <li><a href="#">Brand Strategy</a></li>
+                </ul>
+              </div>
+          
+              <!-- Contact -->
+              <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="contact-list">
+              
+                  <!-- Location -->
+                  <li>
+                    📍 
+                    <a href="https://www.google.com/maps?q=Lahore+Pakistan" target="_blank">
+                      Lahore, Pakistan
+                    </a>
+                  </li>
+              
+                  <!-- Phone -->
+                  <li>
+                    📞 
+                    <a href="tel:+923075071297">
+                      +92 307 5071297
+                    </a>
+                  </li>
+              
+                  <!-- Email -->
+                  <li>
+                    ✉️ 
+                    <a href="mailto:noshahidevelopersinc@gmail.com">
+                      noshahidevelopersinc@gmail.com
+                    </a>
+                  </li>
+              
+                </ul>
+              </div>
+              
+            </div>
+          
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+              <p>© 2026 Noshahi Digital Solution. All rights reserved.</p>
+            </div>
+          </footer> 
 </body>
 </html>

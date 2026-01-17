@@ -133,14 +133,23 @@
 
 
 
-/* ========== HERO SECTION ========== */
+/* ===== HERO SECTION ===== */
 .hero{
-  background:#F9F9F9;
+    background:#F9F9F9;
   padding:100px 40px 80px;
   position:relative;
   overflow:hidden;
 }
 
+/* Grid */
+.hero-container{
+    max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
 /* Gradient Shape */
 .hero::before{
   content:'';
@@ -153,42 +162,36 @@
   border-radius:50%;
   opacity:0.15;
 }
-
-.hero-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-
-/* Hero Text */
+/* Left content */
 .hero h1{
-  font-size:3rem;
+    font-size:3rem;
   line-height:1.2;
   color:#111;
 }
+
 .hero h1 span{
-  background:linear-gradient(90deg,#E63946,#F77F00);
+    background:linear-gradient(90deg,#E63946,#F77F00);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-  margin:20px 0;
+    margin:20px 0;
   font-size:1.05rem;
   color:#444;
   max-width:500px;
 }
 
+/* Buttons */
 .hero-buttons{
   display:flex;
   gap:20px;
   margin-top:35px;
+
 }
+
 .hero-buttons .primary{
-  background:linear-gradient(90deg,#E63946,#F77F00);
+    background:linear-gradient(90deg,#E63946,#F77F00);
   color:#fff;
   border:none;
   padding:14px 30px;
@@ -197,13 +200,14 @@
   font-size:1rem;
   transition:0.3s;
 }
+
 .hero-buttons .primary:hover{
-  box-shadow:0 10px 30px rgba(231,57,70,0.4);
-  transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(231,57,70,0.4);
+    transform:translateY(-3px);
 }
 
 .hero-buttons .secondary{
-  background:transparent;
+    background:transparent;
   border:2px solid #111;
   color:#111;
   padding:14px 30px;
@@ -212,24 +216,52 @@
   font-size:1rem;
   transition:0.3s;
 }
+
 .hero-buttons .secondary:hover{
-  background:#111;
-  color:#fff;
+    background:#111;
+    color:#fff;
 }
 
-/* Hero Image */
+/* Image */
 .hero-img img{
-  width:100%;
+    width:100%;
   max-width:480px;
   animation:float 4s ease-in-out infinite;
 }
-
 @keyframes float{
   0%{transform:translateY(0);}
   50%{transform:translateY(-12px);}
   100%{transform:translateY(0);}
 }
 
+/* ===== Mobile Responsive ===== */
+@media(max-width:900px){
+  .hero{
+    padding:60px 20px;
+  }
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-img{
+    margin-top:40px;
+  }
+}
+.who-we-are{
+  padding:40px 20px;
+  background:#fff;
+}
 /* ========== RESPONSIVE ========== */
 @media(max-width:900px){
   .navbar{
@@ -801,7 +833,7 @@
     <!-- Logo -->
     <div class="nav-logo">
       <img style="width: 50px;" src="img/NDS-logo.png" alt="Noshahi Digital">
-      Noshahi <span>Digital</span>
+      Noshahi <span>Digital Solutions</span>
     </div>
   
     <!-- Menu Links -->
@@ -810,7 +842,7 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="#">Contact</a>
+      <a href="contact-us.html">Contact</a>
       <button class="login-btn">Login</button>
       <button class="cta-btn">Get Quote</button>
     </div>
@@ -843,7 +875,7 @@
   <div class="hero-container">
     <div>
       <h1>
-        We Manage & Grow Your <br>
+        We Manage & Grow  <br>
         <span>Social Media Presence</span>
       </h1>
       <p>
@@ -852,8 +884,7 @@
       </p>
 
       <div class="hero-buttons">
-        <button class="primary">Get Free Consultation</button>
-        <button class="secondary">View Portfolio</button>
+        <button class="primary">View Portfolio</button>
       </div>
     </div>
 
@@ -876,7 +907,7 @@ function toggleMenu(){
     <div class="section-header">
       <span class="section-tag">What We Do</span>
       <h2>
-        Complete <span>Social Media</span> Solutions
+        Complete <span>Social Media Solutions</span> 
       </h2>
       <p class="section-sub">
         We manage, create, and promote your brand with style and strategy.
