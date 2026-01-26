@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Free Consultation | Noshahi Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  min-height:100vh;
+  background:#0c0c0c;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Container */
+.consultation-card {
+  width:100%;
+  max-width:700px;
+  background:#151515;
+  border-radius:20px;
+  padding:40px 35px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.6);
+  animation:fadeUp 0.8s ease;
+  position:relative;
+}
+
+/* Back Home Button */
+.back-btn {
+  position:absolute;
+  top:20px;
+  left:20px;
+  background:#222;
+  border:2px solid #ff5722;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.back-btn:hover {
+  background:linear-gradient(135deg,#ff5722,#e53935);
+  color:#fff;
+  box-shadow:0 12px 30px rgba(255,87,34,0.45);
+}
+
+/* Logo */
+.consultation-logo{
+  text-align:center;
+  margin-bottom:25px;
+}
+.consultation-logo img{
+  width:70px;
+}
+.consultation-logo h2{
+  margin-top:10px;
+  font-weight:600;
+}
+.consultation-logo span{
+  background:linear-gradient(90deg,#ff5722,#e53935);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Headings */
+.consultation-card h3 {
+  text-align:center;
+  margin-bottom:10px;
+}
+.consultation-card p.subtitle {
+  text-align:center;
+  font-size:0.95rem;
+  color:#aaa;
+  margin-bottom:30px;
+}
+
+/* Form */
+form {
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+input, select, textarea {
+  width:100%;
+  padding:14px 15px;
+  border-radius:12px;
+  border:1px solid #333;
+  background:#0c0c0c;
+  color:#fff;
+  outline:none;
+  transition:0.3s;
+  font-size:0.95rem;
+}
+input:focus, select:focus, textarea:focus {
+  border-color:#ff5722;
+  box-shadow:0 0 0 2px rgba(255,87,34,0.25);
+}
+
+textarea {
+  resize:none;
+  min-height:100px;
+}
+
+/* Checkboxes */
+.checkbox-group {
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.checkbox-group label {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:0.9rem;
+  color:#fff;
+}
+
+/* Submit Button */
+.submit-btn {
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff5722,#e53935);
+  color:#fff;
+  font-weight:600;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.35s;
+}
+.submit-btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(255,87,34,0.45);
+}
+
+/* Benefits Section */
+.benefits {
+  margin-top:30px;
+  background:#1a1a1a;
+  padding:20px 25px;
+  border-radius:15px;
+}
+.benefits h4 {
+  margin-bottom:15px;
+  color:#ff5722;
+}
+.benefits ul {
+  list-style:none;
+}
+.benefits ul li {
+  margin-bottom:10px;
+  position:relative;
+  padding-left:25px;
+}
+.benefits ul li::before {
+  content:'✔';
+  position:absolute;
+  left:0;
+  color:#ff5722;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:480px){
+  .consultation-card{
+    padding:30px 20px;
+  }
+  .back-btn{
+    top:15px;
+    left:15px;
+    padding:8px 15px;
+    font-size:0.85rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="consultation-card">
+
+  <!-- Back Home -->
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <!-- Logo -->
+  <div class="consultation-logo">
+    <img src="img/NDS-logo.png" alt="Noshahi Digital">
+    <h2>Noshahi <span>Digital</span></h2>
+  </div>
+
+  <h3>Get Your Free Consultation</h3>
+  <p class="subtitle">Speak with our experts to grow your brand and boost your online presence.</p>
+
+  <!-- Form -->
+  <form action="#" method="POST">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number (Optional)">
+    <input type="text" placeholder="Company / Brand Name">
+    
+    <select>
+      <option value="">Business Type / Industry</option>
+      <option>Restaurant</option>
+      <option>Real Estate</option>
+      <option>School / Institute</option>
+      <option>Clothing / Fashion</option>
+      <option>Startup</option>
+      <option>Other</option>
+    </select>
+
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Social Media</label>
+      <label><input type="checkbox"> Video Ads</label>
+      <label><input type="checkbox"> Posters & Flex</label>
+      <label><input type="checkbox"> Brand Promotion</label>
+      <label><input type="checkbox"> YouTube Marketing</label>
+    </div>
+
+    <input type="url" placeholder="Current Online Presence (Optional)">
+    <textarea placeholder="Message / Notes"></textarea>
+
+    <button type="submit" class="submit-btn">Schedule My Free Consultation</button>
+  </form>
+
+  <!-- Benefits -->
+  <div class="benefits">
+    <h4>Why Choose Us?</h4>
+    <ul>
+      <li>Expert team with proven results</li>
+      <li>Personalized strategy for your business</li>
+      <li>Quick response & guidance</li>
+      <li>Confidential consultation</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -823,6 +823,41 @@
     justify-content:center;
   }
 }
+/* Scroll To Top Button */
+#scrollTopBtn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff5722,#e53935);
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+  display:none;
+  z-index:999;
+  box-shadow:0 10px 25px rgba(255,87,34,0.45);
+  transition:all 0.3s ease;
+}
+
+#scrollTopBtn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(255,87,34,0.6);
+}
+
+/* Mobile adjust */
+@media(max-width:576px){
+  #scrollTopBtn{
+    width:42px;
+    height:42px;
+    font-size:20px;
+    bottom:18px;
+    right:18px;
+  }
+}
 
 </style>
 </head>
@@ -843,8 +878,8 @@
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="contact-us.html">Contact</a>
-      <button class="login-btn">Login</button>
-      <button class="cta-btn">Get Quote</button>
+      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+      <button class="cta-btn" onclick="window.location.href='get-quote.html'">Get Quote</button>
     </div>
   
     <!-- Hamburger -->
@@ -1056,6 +1091,29 @@ function toggleMenu(){
   
   counters.forEach(counter => observer.observe(counter));
   </script>
+  <!-- Scroll To Top Button -->
+<button id="scrollTopBtn" aria-label="Go to top">
+  ↑
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+  
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+  </script>
+  
   <footer class="site-footer">
     <div class="container footer-grid">
   

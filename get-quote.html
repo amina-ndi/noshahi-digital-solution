@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Quote | Noshahi Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body & Background */
+body {
+  min-height: 100vh;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Back to Home Button */
+.back-home {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: #222;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  border: 2px solid #ff5722;
+}
+.back-home:hover {
+  background: linear-gradient(135deg,#ff5722,#e53935);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(255,87,34,0.5);
+  transform: translateY(-2px);
+}
+
+/* Container */
+.quote-container {
+  max-width: 900px;
+  width: 100%;
+  background: #151515;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  animation: fadeUp 0.8s ease;
+}
+
+/* Heading */
+.quote-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.quote-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg,#ff5722,#e53935);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.quote-header p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Form */
+.quote-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+.quote-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.quote-form label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #aaa;
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  padding: 14px 15px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background: #0c0c0c;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 8px rgba(255,87,34,0.4);
+}
+.quote-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  grid-column: span 2;
+}
+
+/* Submit Button */
+.quote-form button {
+  grid-column: span 2;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg,#ff5722,#e53935);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+.quote-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255,87,34,0.45);
+}
+
+/* Benefits Section */
+.quote-benefits {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+.quote-benefits .benefit {
+  flex: 1 1 calc(50% - 10px);
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+.quote-benefits .benefit:hover {
+  background: linear-gradient(135deg,#ff5722,#e53935);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.quote-benefits .benefit::before {
+  content: "✔";
+  color: #ff5722;
+  font-weight: bold;
+}
+
+/* Info Text */
+.quote-info {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 25px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .quote-form {
+    grid-template-columns: 1fr;
+  }
+  .quote-form textarea,
+  .quote-form button {
+    grid-column: span 1;
+  }
+  .quote-benefits .benefit {
+    flex: 1 1 100%;
+  }
+  .back-home {
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Back to Home Button -->
+<a href="index.html" class="back-home">← Back to Home</a>
+
+<div class="quote-container">
+  
+  <!-- Header -->
+  <div class="quote-header">
+    <h1>Get Your Free Quote Today</h1>
+    <p>Fill out the form below and our team will contact you with a tailored solution.</p>
+  </div>
+
+  <!-- Quote Form -->
+  <form class="quote-form">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="example@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+92 300 1234567">
+    </div>
+    <div class="form-group">
+      <label>Company Name</label>
+      <input type="text" placeholder="Your Company">
+    </div>
+    <div class="form-group">
+      <label>Select Service</label>
+      <select required>
+        <option value="">Choose a Service</option>
+        <option>Social Media Management</option>
+        <option>Video Ads Creation</option>
+        <option>Poster & Flex Design</option>
+        <option>Brand Promotion</option>
+        <option>YouTube Marketing</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Budget (Optional)</label>
+      <input type="text" placeholder="Approximate Budget">
+    </div>
+    <div class="form-group">
+      <label>Project Details</label>
+      <textarea placeholder="Describe your project..." required></textarea>
+    </div>
+    <button type="submit">Request My Quote</button>
+  </form>
+
+  <!-- Benefits -->
+  <div class="quote-benefits">
+    <div class="benefit">Fast response within 24 hours</div>
+    <div class="benefit">Tailored solutions for your business</div>
+    <div class="benefit">Professional team with proven results</div>
+    <div class="benefit">Your information is safe with us</div>
+  </div>
+
+  <!-- Info Text -->
+  <div class="quote-info">
+    Our team will review your request and contact you as soon as possible.
+  </div>
+
+</div>
+
+</body>
+</html>
