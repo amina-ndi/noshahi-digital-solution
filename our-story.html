@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | Noshahi Digital</title>
+<link rel="icon" href="img/NDS-logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+body{
+  background:#fff;
+  color:#111;
+  line-height:1.6;
+}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#111;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* Logo */
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.4rem;
+  font-weight:600;
+}
+.nav-logo span{
+  color:#F77F00;
+}
+
+/* Menu */
+.nav-menu{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  transition:all 0.5s ease;
+}
+.nav-menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:0.95rem;
+  position:relative;
+  transition:0.3s;
+}
+.nav-menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transition:0.3s;
+}
+.nav-menu a:hover::after{
+  width:100%;
+}
+.nav-menu a:hover{
+  color:#F77F00;
+}
+/* Active link */
+.nav-menu a.active {
+  color: #ff8a00;       /* Highlight color */
+  font-weight: 700;
+  border-bottom: 3px solid #ff8a00; /* Optional underline */
+  border-radius: 3px 3px 0 0;       /* Rounded underline top corners */
+}
+/* Buttons */
+.nav-menu .login-btn,
+.nav-menu .cta-btn{
+  margin-left:10px;
+  border-radius:25px;
+  padding:6px 18px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.4s ease;
+}
+.login-btn{
+  background:transparent;
+  border:1px solid #F77F00;
+  color:#F77F00;
+}
+.login-btn:hover{
+  background:#F77F00;
+  color:#111;
+  box-shadow:0 0 15px rgba(247,127,0,0.6);
+}
+.cta-btn{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  border:none;
+  color:#fff;
+}
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(231,57,70,0.6);
+}
+
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+  transition:0.4s;
+}
+
+/* Hamburger hover animation */
+.menu-toggle:hover span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  transform:rotate(10deg);
+}
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .navbar{
+    grid-template-columns:auto auto;
+  }
+  @media(max-width:900px){
+  .nav-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:25px 0;
+    display:none;
+  }
+
+  .nav-menu.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+}
+
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{
+    margin:auto;
+  }
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:#F9F9F9;
+  padding:100px 40px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-120px;
+  right:-120px;
+  width:380px;
+  height:380px;
+  background:linear-gradient(135deg,#E63946,#F77F00);
+  border-radius:50%;
+  opacity:0.15;
+}
+.hero h1{
+  font-size:3rem;
+  line-height:1.2;
+}
+.hero h1 span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p{
+  margin:20px 0;
+  font-size:1.05rem;
+  color:#444;
+  max-width:500px;
+}
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  margin-top:35px;
+}
+.hero-buttons .primary{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  color:#fff;
+  border:none;
+  padding:14px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+.hero-buttons .primary:hover{
+  box-shadow:0 10px 30px rgba(231,57,70,0.4);
+  transform:translateY(-3px);
+}
+.hero-img img{
+  width:100%;
+  max-width:480px;
+  border-radius:30px;
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+/* ===== STORY CARDS ===== */
+.section-header{
+  max-width:700px;
+  margin:0 auto 70px;
+  text-align:center;
+}
+.section-tag{
+  display:inline-block;
+  padding:6px 18px;
+  font-size:0.85rem;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#F77F00;
+  background:rgba(247,127,0,0.1);
+  border-radius:25px;
+  margin-bottom:18px;
+}
+.section-header h2{
+  font-size:clamp(2rem,4.5vw,2.8rem);
+  color:#111;
+  line-height:1.25;
+  margin-bottom:15px;
+  font-weight:700;
+}
+.section-header h2 span{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-header .section-sub{
+  font-size:1.05rem;
+  color:#555;
+  line-height:1.7;
+}
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+.card{
+  background:#fff;
+  width:100%;
+  max-width:320px;
+  padding:50px 30px;
+  border-radius:20px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.5s ease;
+  text-align:center;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background: radial-gradient(circle, rgba(231,57,70,0.3) 0%, rgba(247,127,0,0.3) 80%);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  z-index:0;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.card:hover::before{
+  width:300%;
+  height:300%;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+.icon-box{
+  width:70px;
+  height:70px;
+  margin:0 auto 35px;
+  position:relative;
+  z-index:1;
+}
+.icon-box img{
+  width:100%;
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  transition:0.5s ease;
+}
+.icon-hover{
+  opacity:0;
+  transform:scale(0.8);
+}
+.card:hover .icon{
+  opacity:0;
+  transform:scale(0.8);
+}
+.card:hover .icon-hover{
+  opacity:1;
+  transform:scale(1);
+}
+.card h3{
+  font-size:1.2rem;
+  margin-bottom:15px;
+  color:#111;
+  position:relative;
+  z-index:1;
+}
+.card p{
+  font-size:0.95rem;
+  color:#555;
+  line-height:1.6;
+  position:relative;
+  z-index:1;
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  padding:100px 20px;
+  background:#fafafa;
+}
+.timeline-card{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  margin-bottom:30px;
+  transition:0.4s ease;
+}
+.timeline-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+.timeline-card h3{
+  font-size:1.3rem;
+  margin-bottom:8px;
+}
+.timeline-card p{
+  color:#555;
+  font-size:1rem;
+  line-height:1.7;
+}
+
+/* ===== CTA ===== */
+.cta-section{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+.cta-section h2{
+  font-size:2rem;
+  margin-bottom:20px;
+}
+.cta-section button{
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  border:none;
+  color:#fff;
+  padding:14px 40px;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+.cta-section button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(231,57,70,0.5);
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:#111;
+  color:#ccc;
+  padding:80px 20px 20px;
+  text-align:center;
+}
+.site-footer p{
+  margin-top:15px;
+  font-size:0.9rem;
+  color:#888;
+}
+
+/* ===== SCROLL TOP ===== */
+#scrollTopBtn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff5722,#e53935);
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+  display:none;
+  z-index:999;
+}
+#scrollTopBtn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(255,87,34,0.6);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-img{
+    margin-top:40px;
+  }
+  .cards{
+    flex-direction:column;
+    align-items:center;
+  }
+  .timeline-card{
+    width:90%;
+    margin:auto 0 30px;
+  }
+}
+/* Timeline Card Hover & Click Effect */
+.timeline-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  margin-bottom: 30px;
+  transition: 0.4s ease, border-bottom 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 4px solid transparent; /* Default bottom border */
+}
+
+/* Hover effect */
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-bottom: 4px solid #E63946; /* Red gradient color */
+}
+
+/* Click / Active effect */
+.timeline-card:active {
+  border-bottom: 4px solid #E63946; /* Red stays on click */
+}
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="nav-logo">
+          <img style="width: 50px;" src="img/NDS-logo.png" alt="Noshahi Digital">
+          Noshahi <span>Digital Solutions</span>
+        </div>
+      
+        <!-- Menu Links -->
+        <div class="nav-menu" id="navMenu">
+          <a href="index.html" >Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+    
+          <a href="contact-us.html">Contact</a>
+          <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+          <button class="cta-btn" onclick="window.location.href='get-quote.html'">Get Quote</button>
+        </div>
+      
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        
+          const toggleBtn = document.getElementById("menuToggle");
+          const navMenu = document.getElementById("navMenu");
+        
+          toggleBtn.addEventListener("click", function(){
+            navMenu.classList.toggle("show");
+            toggleBtn.classList.toggle("active");
+          });
+        
+        });
+        </script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-container">
+    <div>
+      <h1>Our <span>Story</span></h1>
+      <p>From a small idea to a growing digital agency, this is the journey of Noshahi Digital Solution.</p>
+      <div class="hero-buttons">
+        <button class="primary" onclick="window.location.href='contact-us.html'">Get Free Consultation</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/hero-section.jpg" alt="Our Story">
+    </div>
+  </div>
+</section>
+<!-- OUR STORY SECTION -->
+<section class="our-story container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-tag">Our Story</span>
+      <h2>Journey of <span>Noshahi Digital</span></h2>
+      <p class="section-sub">From humble beginnings to a full-fledged digital solutions agency, here’s how we grew.</p>
+    </div>
+  
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="icon-box">
+          <img src="img/start.png" class="icon">
+          <img src="img/start-hover.png" class="icon-hover">
+        </div>
+        <h3>How It Started</h3>
+        <p>We began with a small team passionate about helping businesses grow digitally.</p>
+      </div>
+  
+      <div class="card">
+        <div class="icon-box">
+          <img src="img/growth.png" class="icon">
+          <img src="img/growth-hover.png" class="icon-hover">
+        </div>
+        <h3>Our Growth</h3>
+        <p>Expanding our services, clients, and team across multiple industries and cities.</p>
+      </div>
+  
+      <div class="card">
+        <div class="icon-box">
+          <img src="img/believe.png" class="icon">
+          <img src="img/believe-hover.png" class="icon-hover">
+        </div>
+        <h3>What We Believe</h3>
+        <p>Creativity, transparency, and measurable results are at the heart of everything we do.</p>
+      </div>
+ 
+  </section>
+  
+  
+<!-- STORY CARDS -->
+<section class="what-we-do">
+  <div class="container section-header">
+    <span class="section-tag">Our Journey</span>
+    <h2>Milestones That <span>Shaped Us</span></h2>
+    <p class="section-sub">From small beginnings to a growing agency, see our key milestones.</p>
+  </div>
+
+  <div class="cards container">
+    <div class="card">
+      <div class="icon-box">
+        <img src="img/start.png" class="icon">
+      </div>
+      <h3>2019 - Beginnings</h3>
+      <p>Started as a small creative team with big dreams.</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <img src="img/clients.png" class="icon">
+      </div>
+      <h3>2021 - First Clients</h3>
+      <p>Acquired our first 50 clients and grew steadily.</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <img src="img/expansion.png" class="icon">
+      </div>
+      <h3>2023 - Full-Service</h3>
+      <p>Became a full-service digital solutions provider.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline container">
+  <div class="timeline-card">
+    <h3>Vision & Values</h3>
+    <p>We believe in creativity, transparency, and delivering measurable results for every client.</p>
+  </div>
+  <div class="timeline-card">
+    <h3>Growth & Expansion</h3>
+    <p>Expanding our services across multiple cities and industries.</p>
+  </div>
+  <div class="timeline-card">
+    <h3>Future Goals</h3>
+    <p>Continuously improving, scaling brands and innovating solutions for tomorrow.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Be Part of Our Story?</h2>
+  <button onclick="window.location.href='get-free-consultation.html'">Get Free Consultation</button>
+</section>
+
+<!-- SCROLL TOP -->
+<button id="scrollTopBtn" aria-label="Go to top">↑</button>
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) { scrollBtn.style.display = "block"; }
+  else { scrollBtn.style.display = "none"; }
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+</script>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2026 Noshahi Digital Solution. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
