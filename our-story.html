@@ -6,6 +6,8 @@
 <title>Our Story | Noshahi Digital</title>
 <link rel="icon" href="img/NDS-logo.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 <style>
 /* ===== GLOBAL ===== */
@@ -426,7 +428,7 @@ body{
 /* ===== SCROLL TOP ===== */
 #scrollTopBtn{
   position:fixed;
-  bottom:25px;
+  bottom:120px;
   right:25px;
   width:48px;
   height:48px;
@@ -629,6 +631,56 @@ body{
     justify-content:center;
   }
 }
+/* Floating WhatsApp Button */
+.whatsapp-float{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg,#25D366,#1ebe57);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  animation: whatsapp-pulse 1.8s infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.whatsapp-float:hover{
+  transform: scale(1.1);
+}
+
+/* Vibrate / Pulse Animation */
+@keyframes whatsapp-pulse{
+  0%{
+    box-shadow: 0 0 0 0 rgba(37,211,102,0.6);
+  }
+  70%{
+    box-shadow: 0 0 0 20px rgba(37,211,102,0);
+  }
+  100%{
+    box-shadow: 0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+  .whatsapp-float{
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -880,6 +932,12 @@ scrollBtn.addEventListener("click", () => {
     <p>© 2026 Noshahi Digital Solution. All rights reserved.</p>
   </div>
 </footer>
-
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923075071297"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
