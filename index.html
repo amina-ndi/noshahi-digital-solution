@@ -166,7 +166,7 @@
 }
 /* Left content */
 .hero h1{
-    font-size:3rem;
+  font-size:3rem;
   line-height:1.2;
   color:#111;
 }
@@ -178,7 +178,7 @@
 }
 
 .hero p{
-    margin:20px 0;
+  margin:20px 0;
   font-size:1.05rem;
   color:#444;
   max-width:500px;
@@ -683,6 +683,30 @@
     grid-template-columns:1fr;
   }
 }
+/* Scroll To Top Button */
+#scrollTopBtn{
+  position:fixed;
+  bottom:120px;
+  right:25px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff5722,#e53935);
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+  display:none;
+  z-index:999;
+  box-shadow:0 10px 25px rgba(255,87,34,0.45);
+  transition:all 0.3s ease;
+}
+
+#scrollTopBtn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(255,87,34,0.6);
+}
 /* ===== FOOTER ===== */
 .site-footer{
   background:#111;
@@ -825,30 +849,7 @@
     justify-content:center;
   }
 }
-/* Scroll To Top Button */
-#scrollTopBtn{
-  position:fixed;
-  bottom:120px;
-  right:25px;
-  width:48px;
-  height:48px;
-  border:none;
-  border-radius:50%;
-  background:linear-gradient(135deg,#ff5722,#e53935);
-  color:#fff;
-  font-size:22px;
-  font-weight:700;
-  cursor:pointer;
-  display:none;
-  z-index:999;
-  box-shadow:0 10px 25px rgba(255,87,34,0.45);
-  transition:all 0.3s ease;
-}
 
-#scrollTopBtn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 15px 35px rgba(255,87,34,0.6);
-}
 
 /* Mobile adjust */
 @media(max-width:576px){
@@ -928,6 +929,8 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="consultation.html">consultation</a>
+      <a href="our-story.html">Our-story</a>
 
       <a href="contact-us.html">Contact</a>
       <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
@@ -963,10 +966,10 @@
     <div>
       <h1>
         We Manage & Grow  <br>
-        <span>Social Media Presence</span>
+        <span>Social Media <br> Presence</span>
       </h1>
       <p>
-        Noshahi Digital Solution helps brands create powerful content,
+        Noshahi Digital Solutions helps brands create powerful content,
         manage social platforms and promote businesses with result-driven strategies.
       </p>
 
@@ -1175,7 +1178,7 @@ function toggleMenu(){
       <div class="footer-brand">
         <div class="footer-logo">
           <img src="img/NDS-logo.png" alt="Noshahi Digital">
-          <h3>Noshahi <span>Digital</span></h3>
+          <h3>Noshahi <span>Digital Solutions</span></h3>
         </div>
         <p>
           We help brands grow through smart social media management,
@@ -1242,7 +1245,7 @@ function toggleMenu(){
   
     <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p>© 2026 Noshahi Digital Solution. All rights reserved.</p>
+      <p>© 2026 Noshahi Digital Solutions. All rights reserved.</p>
     </div>
   </footer>
     <!-- Floating WhatsApp Button -->

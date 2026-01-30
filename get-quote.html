@@ -65,9 +65,9 @@ body {
 .quote-header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg,#ff5722,#e53935);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background:linear-gradient(90deg,#E63946,#F77F00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 .quote-header p {
   font-size: 1rem;
@@ -108,11 +108,12 @@ body {
   border-color: #ff5722;
   box-shadow: 0 0 8px rgba(255,87,34,0.4);
 }
-.quote-form textarea {
+.quote-form textarea{
   resize: vertical;
-  min-height: 120px;
-  grid-column: span 2;
+  resize:none;
+  min-height:130px;  grid-column: 1 / -1; /* 👈 poori row cover karega */
 }
+
 
 /* Submit Button */
 .quote-form button {
