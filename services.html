@@ -416,7 +416,7 @@
   position:relative;
 }
 .section-title h2 {
-  font-size: 36px;
+  font-size: clamp(2rem,4.5vw,2.8rem);
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
@@ -436,7 +436,7 @@
 
 .section-title p {
   text-align: center;
-  color: #666;
+  color:#F77F00;
   font-size: 16px;
 }
 
@@ -451,15 +451,15 @@
 }
 
 .section-header h2{
-  font-size:36px;
+  font-size:clamp(2rem,4.5vw,2.8rem);
   font-weight:700;
   color:#111;
   margin-bottom:15px;
 }
 
 .section-header p{
-  color:#666;
   font-size:16px;
+  
 }
 
 /* ===== TIMELINE ===== */
@@ -591,6 +591,12 @@
   padding: 100px 20px;
   background: #f9f9f9;
 }
+.faq-section h2{
+  font-size: clamp(2rem,4.5vw,2.8rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
 .faq-section h2 span {
   background: linear-gradient(90deg, #ff3c00, #ff8c00, #ff3c00);
   background-size: 200% auto;
@@ -611,7 +617,7 @@
 }
 
 .section-header h2 {
-  font-size: 36px;
+  font-size:  clamp(2rem,4.5vw,2.8rem);
   font-weight: 700;
   color: #111;
   margin-bottom: 10px;
@@ -619,7 +625,7 @@
 
 .section-header p {
   font-size: 16px;
-  color: #666;
+  color:#F77F00;
 }
 
 /* Accordion */
@@ -1319,7 +1325,7 @@ faqItems.forEach(item => {
   <div class="container">
     <h2>Ready to Take Your <span> Digital Growth to the Next Level</span>?</h2>
     <p>Join our clients who are already seeing amazing results. Let's grow together!</p>
-    <a href="contact.html" class="cta-btn">Get Started Now</a>
+    <a href="login.html" class="cta-btn">Get Started Now</a>
   </div>
 </section>
   <!-- Scroll To Top Button -->
